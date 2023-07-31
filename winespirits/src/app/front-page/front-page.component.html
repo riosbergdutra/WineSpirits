@@ -14,10 +14,12 @@
         <input type="password" id="password" formControlName="password" placeholder="Senha">
       </div>
 
-      <button type="submit">Entrar</button>
+      <button type="submit" class="Entrar">Login</button>
     </form>
-    <a routerLink="cadastro" class="conta-nova">Criar Conta</a>
-  </div>
+      <div class="conta-nova" (click)="openOverlay2()" (click)="closeOverlay()">Criar Conta</div>
+      <button (click)="closeOverlay()" class="Fechar">Fechar</button>
 
-  <button (click)="closeOverlay()">Fechar</button>
+  </div>
+</div>
+  <div *ngIf="showOverlay2" class="overlay"><app-cadastro></app-cadastro></div>
 </div>

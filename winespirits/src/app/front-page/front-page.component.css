@@ -68,16 +68,35 @@ button:hover {
   color: white;
 }
 
-.overlay button {
+.Fechar {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 86%;
+  left: 42%;
 }
 
-.overlay button:hover {
+  .Entrar { /* Posiciona o botão Entrar acima do .conta-nova */
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  .Entrar:hover {
+    background-color: #0056b3;
+  }
+
+.overlay .Fechar:hover {
   background-color: #0056b3;
 }
 
@@ -94,7 +113,7 @@ button:hover {
   margin: 26px 12.5%;
   cursor: pointer;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 52px;
   text-decoration: none;
 }
 
@@ -168,3 +187,16 @@ button:disabled {
     margin-top: 9px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  img {
+    padding-top: 5px; /* Reduzir o espaçamento superior para telas menores */
+  }
+
+  /* Estilos responsivos para o botão Fechar */
+  .Fechar {
+    top: 45%; /* Move o botão para o centro verticalmente */
+    left: 40%; /* Move o botão para o centro horizontalmente */
+  }
+}
+

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
 import {HttpClient} from '@angular/common/http'
@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FrontPageComponent {
   showOverlay: boolean = false;
+  showOverlay2: boolean = false
 
   // Função para abrir a tela sobreposta
   openOverlay() {
@@ -20,6 +21,13 @@ export class FrontPageComponent {
   // Função para fechar a tela sobreposta
   closeOverlay() {
     this.showOverlay = false;
+  }
+  openOverlay2(){
+    this.showOverlay2 = true;
+  }
+
+  closeOverlay2() {
+    this.showOverlay2 = false
   }
 
   formgroup: FormGroup;
@@ -49,7 +57,7 @@ export class FrontPageComponent {
             console.log('Cadastro encontrado:', response);
 
             // Redireciona o usuário para outra página
-            this.router.navigate(['/home']);
+            this.router.navigate(['home']);
           } else {
             console.log('Cadastro não encontrado. Verifique os dados informados.');
           }

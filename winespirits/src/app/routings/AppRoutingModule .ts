@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { RouterModule, Routes } from "@angular/router";
+import { HomeComponent } from '../home/home.component';
+import { FrontPageComponent } from '../front-page/front-page.component';
 
-const routes: Routes = []; // sets up routes constant where you define your routes
-
-// configures NgModule imports and exports
+const routes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: '',  component: FrontPageComponent}
+]
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports:[RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class appRoutingModule {}

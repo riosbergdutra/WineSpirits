@@ -1,0 +1,77 @@
+
+.cadastro {
+  text-align: center;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 100%; /* O input ocupa toda a largura do contêiner */
+  padding: 10px; /* Mesmo padding utilizado no input */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Inclui a borda e o padding na largura total */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 511px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4%;
+  height: auto;
+  box-sizing: border-box;
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  background-color: #959595;
+}
+
+.welcome {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* Novas regras para tornar o formulário responsivo */
+/* Entre 602px e 1322px */
+@media screen and (min-width: 602px) and (max-width: 1322px) {
+  .formulario {
+    max-width: 59%;
+    position: absolute;
+    top: 21%;
+    left: 22%;
+  }
+}
+
+/* Até 601px (celular) */
+@media screen and (max-width: 601px) {
+  .formulario {
+    max-width: 90%;
+    position: static;
+    transform: none;
+    margin-top: 9px;
+  }
+}
