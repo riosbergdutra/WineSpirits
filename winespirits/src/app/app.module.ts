@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
+import { CorpoComponent } from './corpo/corpo.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FrontPageComponent,
     CadastroComponent,
-    HomeComponent
+    HomeComponent,
+    CorpoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

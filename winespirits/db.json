@@ -1,3 +1,25 @@
 {
-  "formData": [ ]
+  "formData": [],
+  "wines": [
+    { "id": 1, "name": "Vinho Tinto", "year": 2020, "type": "Tinto", "imageUrl": "https://images.tcdn.com.br/img/img_prod/1211358/vinho_tinto_natural_tinto_de_rulo_pipeno_2020_113_1_c2a3a12a070829f62ef7b528b30b98a0.png" },
+    { "id": 2, "name": "Vinho Branco", "year": 2019, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 3, "name": "Vinho Rosé", "year": 2021, "type": "Rosé", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 4, "name": "Vinho Merlot", "year": 2018, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 5, "name": "Vinho Chardonnay", "year": 2022, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 6, "name": "Vinho Pinot Noir", "year": 2017, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 7, "name": "Vinho Malbec", "year": 2019, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 8, "name": "Vinho Sauvignon Blanc", "year": 2020, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 9, "name": "Vinho Cabernet Sauvignon", "year": 2018, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 10, "name": "Vinho Syrah", "year": 2021, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 11, "name": "Vinho Riesling", "year": 2019, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 12, "name": "Vinho Zinfandel", "year": 2020, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 13, "name": "Vinho Muscat", "year": 2018, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 14, "name": "Vinho Carménère", "year": 2022, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 15, "name": "Vinho Pinot Grigio", "year": 2019, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 16, "name": "Vinho Sangiovese", "year": 2021, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 17, "name": "Vinho Viognier", "year": 2018, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 18, "name": "Vinho Nebbiolo", "year": 2020, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 19, "name": "Vinho Gewürztraminer", "year": 2019, "type": "Branco", "imageUrl": "assets/wine-images/vinho-branco.jpg" },
+    { "id": 20, "name": "Vinho Tempranillo", "year": 2018, "type": "Tinto", "imageUrl": "assets/wine-images/vinho-branco.jpg" }
+  ]
 }

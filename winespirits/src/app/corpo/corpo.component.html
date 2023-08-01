@@ -1,0 +1,9 @@
+<p>corpo works!</p>
+<div class="vinhos-container">
+  <div *ngFor="let wine of wines" class="vinhos">
+    <img [src]="wine.imageUrl" alt="{{ wine.name }}" class="wine-image">
+    <h3 class="name">{{ wine.name }}</h3>
+    <p class="Tipo">Tipo: {{ wine.type }}</p>
+    <p class="Ano">Ano: {{ wine.year }}</p>
+  </div>
+</div>
