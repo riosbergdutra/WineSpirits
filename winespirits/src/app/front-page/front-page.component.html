@@ -1,25 +1,25 @@
 <div class="front-page"><img src="https://img.freepik.com/fotos-premium/garrafa-derramando-vinho-tinto-em-vidro_23-2148261677.jpg" alt=""><div class="lore"><h2>Bem vindo</h2> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex cumque ducimus a, illum quo totam atque id temporibus quod sequi vitae soluta culpa mollitia provident. Excepturi cumque nostrum a repellat. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero impedit numquam culpa voluptatem? Assumenda, dolorum tempore? Reiciendis vero officiis alias provident laboriosam? Pariatur accusamus minus architecto tempora consequuntur voluptatibus eum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maxime, dolor placeat ad, culpa molestias nostrum possimus, atque consectetur quos mollitia pariatur sed reiciendis veniam velit impedit provident recusandae iste! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ipsa doloribus assumenda aliquid incidunt molestiae perferendis. Corrupti expedita sequi tempore quibusdam accusamus, debitis dolore aliquam repudiandae voluptatem minus quisquam incidunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quibusdam repellat ullam enim sapiente possimus fugit pariatur, tempora quisquam assumenda accusantium a. Dignissimos libero eaque eligendi rerum aliquid sunt quos?</p><br>
-<button (click)="openOverlay()">saiba mais</button></div> <!-- Elemento da tela sobreposta -->
-<div class="overlay" *ngIf="showOverlay">
-  <div class="formulario">
-    <form class="form" [formGroup]="formgroup" (ngSubmit)="onSubmit()">
-      <div class="login"><h1>login</h1></div>
-      <div class="name">
-        <label for="email"></label>
-        <input type="email" id="email" formControlName="email" placeholder="Email">
-      </div>
+  <button (click)="openOverlay()">saiba mais</button></div> <!-- Elemento da tela sobreposta -->
+  <div class="overlay" *ngIf="showOverlay">
+    <div class="formulario">
+      <form class="form" [formGroup]="formgroup" (ngSubmit)="onSubmit()">
+        <div class="login"><h1>login</h1></div>
+        <div class="name">
+          <label for="email"></label>
+          <input type="email" id="email" formControlName="email" placeholder="Email">
+        </div>
 
-      <div class="password">
-        <label for="password"></label>
-        <input type="password" id="password" formControlName="password" placeholder="Senha">
-      </div>
+        <div class="password">
+          <label for="password"></label>
+          <input type="password" id="password" formControlName="password" placeholder="Senha">
+        </div>
 
-      <button type="submit" class="Entrar">Login</button>
-    </form>
-      <div class="conta-nova" (click)="openOverlay2()" (click)="closeOverlay()">Criar Conta</div>
-      <button (click)="closeOverlay()" class="Fechar">Fechar</button>
+        <button type="submit" class="Entrar">Login</button>
+      </form>
+        <div class="conta-nova" (click)="openOverlay2()" (click)="closeOverlay()">Criar Conta</div>
+        <button (click)="closeOverlay()" class="Fechar">Fechar</button>
 
+    </div>
   </div>
-</div>
-  <div *ngIf="showOverlay2" class="overlay"><app-cadastro></app-cadastro></div>
-</div>
+    <div *ngIf="showOverlay2" class="overlay"><app-cadastro></app-cadastro></div>
+  </div>
