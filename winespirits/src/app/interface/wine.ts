@@ -4,4 +4,5 @@ export interface Wine {
   year: number;
   type: string;
   imageUrl: string;
+  price: number;
 }
