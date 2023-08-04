@@ -27,6 +27,7 @@
   width: 42%;
   padding: 9px;
 }
+
 .Entrar:hover {
   background-color: #0056b3;
 }
@@ -34,8 +35,6 @@
 .overlay .Fechar:hover {
 background-color: #0056b3;
 }
-
-
 
 .conta-nova {
 display: block;
@@ -55,7 +54,7 @@ text-decoration: none;
 
 .login {
 text-align: center;
-color:  white;
+color:  black;
 }
 
 div {
@@ -89,7 +88,7 @@ button:disabled {
   position: absolute;
   top: 18%;
   left: 30%;
-  background-color:#959595 ;
+  background-color:white ;
 
 }
 
