@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from '../home/home.component';
-import { FrontPageComponent } from '../front-page/front-page.component';
+import { CadastrarSeComponent } from '../cadastrar-se/cadastrar-se.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'home',  component: FrontPageComponent}
+  {path: 'cadastro', component: CadastrarSeComponent}
 ]
 @NgModule({
   declarations: [],

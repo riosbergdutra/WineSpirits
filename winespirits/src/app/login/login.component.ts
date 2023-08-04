@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  showOverlay: boolean = false;
+  showOverlay: boolean = true;
   showOverlay2: boolean = false;
 
   // Função para abrir a tela sobreposta
@@ -55,8 +55,8 @@ export class LoginComponent {
           if (response.length > 0) {
             console.log('Cadastro encontrado:', response);
 
-            // Redireciona o usuário para outra página
-            this.router.navigate(['home']);
+            // Define a propriedade showOverlay como false após o cadastro ser encontrado
+            this.showOverlay = false;
           } else {
             console.log('Cadastro não encontrado. Verifique os dados informados.');
           }
@@ -66,7 +66,7 @@ export class LoginComponent {
         }
       );
     } else {
-      console.log('Formulário inválido. Verifique os campos.');
+     alert('Formulário inválido. Verifique os campos.');
     }
   }
 }

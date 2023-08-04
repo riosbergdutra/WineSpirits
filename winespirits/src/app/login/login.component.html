@@ -14,7 +14,8 @@
 
       <button type="submit" class="Entrar">Login</button>
     </form>
-    <div class="conta-nova" (click)="openOverlay2()" (click)="closeOverlay()">Criar Conta</div>
-    <button (click)="closeOverlay()" class="Fechar">Fechar</button>
+    <a routerLink="cadastro">
+      <div class="conta-nova" (click)="openOverlay2()" (click)="closeOverlay()">Criar conta</div>
+    </a>
   </div>
 </div>

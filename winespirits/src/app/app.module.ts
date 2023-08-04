@@ -4,9 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FrontPageComponent } from './front-page/front-page.component';
 import { AppRoutingModule } from './routings/AppRoutingModule ';
-import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
 import { CorpoComponent } from './corpo/corpo.component';
 import { FooterComponent } from './footer/footer.component';
@@ -18,8 +16,6 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FrontPageComponent,
-    CadastroComponent,
     HomeComponent,
     CorpoComponent,
     FooterComponent,
