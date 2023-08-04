@@ -9,9 +9,8 @@ import { LoginServiceService } from '../services/login-service.service';
   styleUrls: ['./cadastrar-se.component.css']
 })
 export class CadastrarSeComponent {
-  showOverlay: boolean = true; // Corrigindo o nome da propriedade
+  showOverlay: boolean = true;
   formgroup: FormGroup;
-  name: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,7 +22,7 @@ export class CadastrarSeComponent {
       sobrenome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      dataNascimento: ['', [Validators.required, this.validarIdade]], // Adicionando a validação de idade
+      dataNascimento: ['', [Validators.required, this.validarIdade.bind(this)]], // Certifique-se de fazer o bind do contexto corretamente
       genero: ['', Validators.required],
     });
   }
@@ -31,12 +30,10 @@ export class CadastrarSeComponent {
   onSubmit() {
     if (this.formgroup.valid) {
       const formData = this.formgroup.value;
-
       // Envia os dados para o serviço usando o método enviarDadosFormulario
       this.loginservice.enviarDadosFormulario(formData).subscribe(
         (response) => {
           console.log('Dados do formulário enviados com sucesso:', response);
-
           // Aguarda 1 segundo (1000 milissegundos) antes de redirecionar para a página inicial
           setTimeout(() => {
             this.router.navigate(['']);
@@ -59,15 +56,14 @@ export class CadastrarSeComponent {
     const hoje = new Date();
     const idade = hoje.getFullYear() - dataNascimento.getFullYear();
 
-    // Verifica se a data de nascimento já ocorreu este ano ou se ainda vai ocorrer
-    if (
-      hoje.getMonth() < dataNascimento.getMonth() ||
-      (hoje.getMonth() === dataNascimento.getMonth() && hoje.getDate() < dataNascimento.getDate())
-    ) {
-      return { idadeInvalida: true };
+    // Verifica se a data de nascimento já ocorreu este ano
+    const dataNascimentoEsteAno = new Date(hoje.getFullYear(), dataNascimento.getMonth(), dataNascimento.getDate());
+    if (dataNascimentoEsteAno > hoje) {
+      // Não podemos alterar a idade diretamente, então usamos a função setFullYear para obter a idade correta
+      dataNascimento.setFullYear(dataNascimento.getFullYear() - 1);
     }
 
-    if (idade < 18) {
+    if (dataNascimento > hoje || idade < 18) {
       return { idadeInvalida: true };
     }
 
