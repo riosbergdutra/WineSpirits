@@ -1,6 +1,5 @@
-<div class="overlay" *ngIf="showOverlay">
   <div class="formulario">
-    <form class="form" [formGroup]="formgroup"  (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="formgroup"  (ngSubmit)="onSubmit()" >
       <div class="login"><h1>login</h1></div>
       <div class="name">
         <label for="email"></label>
@@ -14,8 +13,5 @@
 
       <button type="submit" class="Entrar">Login</button>
     </form>
-    <a routerLink="cadastro" class="conta-nova">
-    Criar conta
-    </a>
+    <a routerLink="/cadastro" class="conta-nova">Criar conta</a>
   </div>
-</div>

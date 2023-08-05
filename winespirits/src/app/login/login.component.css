@@ -1,19 +1,5 @@
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.overlay h2, .overlay p {
-  color: white;
-}
 
 
 .Entrar { /* Posiciona o botão Entrar acima do .conta-nova */
@@ -26,15 +12,13 @@
   border: none;
   width: 42%;
   padding: 9px;
+  cursor: pointer;
 }
 
 .Entrar:hover {
   background-color: #0056b3;
 }
 
-.overlay .Fechar:hover {
-background-color: #0056b3;
-}
 
 .conta-nova {
 display: block;
@@ -49,6 +33,10 @@ cursor: pointer;
 text-align: center;
 margin-top: 52px;
 text-decoration: none;
+}
+
+.conta-nova:hover {
+  background-color:  #319a1e;
 }
 
 

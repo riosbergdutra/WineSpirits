@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,6 @@ import { LoginServiceService } from '../services/login-service.service';
 })
 export class LoginComponent {
   formgroup: FormGroup;
-  showOverlay: boolean = true
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,11 +32,13 @@ export class LoginComponent {
       // Verifica se o cadastro existe usando o método verificarCadastro do serviço CadastroService
       this.service.verificarCadastro(email, password).subscribe(
         (response) => {
+          console.log('Resposta do serviço:', response);
+
           if (response.length > 0) {
             console.log('Cadastro encontrado:', response);
 
             // Redireciona o usuário para outra página
-            this.showOverlay = false
+            this.router.navigate(['']); // Verifique se o caminho correto é fornecido aqui
           } else {
             console.log('Cadastro não encontrado. Verifique os dados informados.');
           }

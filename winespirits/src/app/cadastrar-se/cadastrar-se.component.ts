@@ -36,7 +36,7 @@ export class CadastrarSeComponent {
           console.log('Dados do formulário enviados com sucesso:', response);
           // Aguarda 1 segundo (1000 milissegundos) antes de redirecionar para a página inicial
           setTimeout(() => {
-            this.router.navigate(['']);
+            this.router.navigate(['/login']);
             // Define a propriedade showOverlay como true novamente para mostrar o overlay na próxima vez que o usuário clicar para cadastrar
             this.showOverlay = true;
           }, 1000);

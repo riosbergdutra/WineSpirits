@@ -1,9 +1,11 @@
+/* Estilos para o contêiner de vinhos */
 .vinhos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Estilos para cada elemento de vinho */
 .vinhos {
   background-color: white;
   margin-top: 36px;
@@ -19,16 +21,19 @@
   transform: scale(1.1); /* Aumentar o tamanho do elemento em 10% no efeito hover */
 }
 
+/* Estilos para o texto de tipo de vinho */
 .Tipo {
   color: rgb(190, 190, 190);
   margin: 1%;
 }
 
+/* Estilos para o texto de ano do vinho */
 .Ano {
   color: black;
   margin: 1%;
 }
 
+/* Estilos para a imagem do vinho */
 .wine-image {
   height: auto;
   width: 98%;
@@ -36,6 +41,7 @@
   margin: 1%;
 }
 
+/* Estilos para telas menores */
 @media screen and (max-width: 768px) {
   .vinhos {
     width: 71%; /* Ocupar toda a largura disponível */
@@ -48,4 +54,5 @@
     width: 49%; /* Imagem ocupará toda a largura disponível */
     height: auto; /* Altura será ajustada automaticamente para manter a proporção da imagem */
   }
+
 }

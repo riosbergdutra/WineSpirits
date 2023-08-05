@@ -30,9 +30,9 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+button:hover {
+  background-color: #0056b3;
+
 }
 
 .formulario {
