@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Wine } from '../interface/wine';
 import { WineService } from '../services/wine.service';
-
 @Component({
   selector: 'app-corpo',
   templateUrl: './corpo.component.html',
@@ -9,13 +8,12 @@ import { WineService } from '../services/wine.service';
 })
 export class CorpoComponent {
   wines: Wine[] = [];
-
+  tipoVinho: string = ''; // Valor padrão vazio para o tipoVinho
+  precoMinimo: number = 0; // Valor padrão de 0 para o precoMinimo
   constructor(private wineService: WineService) { }
-
   ngOnInit() {
     this.loadWines();
   }
-
   loadWines() {
     this.wineService.getWines().subscribe(
       (data) => {
@@ -23,6 +21,21 @@ export class CorpoComponent {
       },
       (error) => {
         console.error('Erro ao carregar os vinhos:', error);
+      }
+    );
+  }
+  pesquisar() {
+    // Chame o serviço de pesquisa com os parâmetros fornecidos
+    this.wineService.realizarPesquisaAvancada(
+      this.tipoVinho,
+      this.precoMinimo
+      // Adicione outros parâmetros da pesquisa avançada aqui, se necessário
+    ).subscribe(
+      (data) => {
+        this.wines = data;
+      },
+      (error) => {
+        console.error('Erro ao realizar pesquisa avançada:', error);
       }
     );
   }

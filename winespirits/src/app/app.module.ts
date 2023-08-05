@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CorpoComponent } from './corpo/corpo.component';
 import { FooterComponent } from './footer/footer.component';
 import { CadastrarSeComponent } from './cadastrar-se/cadastrar-se.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -26,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
