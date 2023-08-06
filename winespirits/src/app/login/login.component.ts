@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +12,7 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    private authService: AuthenticationService
+    private router: Router
   ) {
     this.formgroup = this.formBuilder.group({
       email: ['', Validators.required],
@@ -27,11 +25,8 @@ export class LoginComponent {
       const formData = this.formgroup.value;
       const { email, password } = formData;
 
-      if (this.authService.login(email, password)) {
-        this.router.navigate(['']); // Redireciona para a página principal após o login
-      } else {
-        console.log('Login falhou. Verifique as credenciais.');
-      }
+      // Redireciona o usuário para outra página
+      this.router.navigate(['']); // Verifique se o caminho correto é fornecido aqui
     } else {
       console.log('Formulário inválido. Verifique os campos.');
     }
