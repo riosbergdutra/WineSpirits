@@ -39,4 +39,9 @@ export class CorpoComponent {
       }
     );
   }
+  capitalizarPrimeiraLetra() {
+    if (this.tipoVinho && this.tipoVinho.length > 0) {
+      const palavras = this.tipoVinho.toLowerCase().split(' ');
+      this.tipoVinho = palavras.map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1)).join(' ');}
+    }
 }

@@ -1,15 +1,7 @@
 <div class="vinhos-container">
     <div class="search-container">
       <label for="tipoVinho">Tipo de Vinho:</label>
-      <select id="tipoVinho" [(ngModel)]="tipoVinho">
-        <option value="">Todos</option>
-        <option value="Tinto">Tinto</option>
-        <option value="Branco">Branco</option>
-        <option value="Rosé">Rosé</option>
-      </select>
-      <label for="precoMinimo">Preço Mínimo:</label>
-      <input type="number" id="precoMinimo" [(ngModel)]="precoMinimo">
-    <!-- Outros campos de pesquisa (preço máximo, ano mínimo, ano máximo) -->
+      <input id="tipoVinho" [(ngModel)]="tipoVinho" (input)="capitalizarPrimeiraLetra()" >
 
     <button (click)="pesquisar()">Pesquisar</button>
   </div>
@@ -21,4 +13,3 @@
     <p class="preço">R$ {{ wine.price }}</p>
   </div>
 </div>
-

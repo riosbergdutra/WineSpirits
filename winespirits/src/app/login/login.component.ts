@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LoginServiceService } from '../services/login-service.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +13,8 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
     private router: Router,
-    private service: LoginServiceService // Injete o serviço CadastroService
+    private authService: AuthenticationService
   ) {
     this.formgroup = this.formBuilder.group({
       email: ['', Validators.required],
@@ -29,24 +27,11 @@ export class LoginComponent {
       const formData = this.formgroup.value;
       const { email, password } = formData;
 
-      // Verifica se o cadastro existe usando o método verificarCadastro do serviço CadastroService
-      this.service.verificarCadastro(email, password).subscribe(
-        (response) => {
-          console.log('Resposta do serviço:', response);
-
-          if (response.length > 0) {
-            console.log('Cadastro encontrado:', response);
-
-            // Redireciona o usuário para outra página
-            this.router.navigate(['']); // Verifique se o caminho correto é fornecido aqui
-          } else {
-            console.log('Cadastro não encontrado. Verifique os dados informados.');
-          }
-        },
-        (error) => {
-          console.error('Erro ao verificar o cadastro:', error);
-        }
-      );
+      if (this.authService.login(email, password)) {
+        this.router.navigate(['']); // Redireciona para a página principal após o login
+      } else {
+        console.log('Login falhou. Verifique as credenciais.');
+      }
     } else {
       console.log('Formulário inválido. Verifique os campos.');
     }

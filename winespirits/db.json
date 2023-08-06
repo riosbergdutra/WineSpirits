@@ -1,7 +1,14 @@
 {
   "formData": [
-    
-
+    {
+      "nome": "riosberg",
+      "sobrenome": "Dutra",
+      "email": "riosbergdutra@gmail.com",
+      "password": "12345678",
+      "dataNascimento": "1999-01-01",
+      "genero": "masculino",
+      "id": 1
+    }
   ],
   "wines": [
     {

@@ -26,7 +26,7 @@
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 23px;
   margin-right: 20px;
 }
 
@@ -46,7 +46,7 @@ button {
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 11px;
   cursor: pointer;
 }
 
@@ -119,5 +119,8 @@ button:hover {
   label {
     margin-bottom: 10px; /* Adicionar espaço entre os elementos */
     margin-right: 0; /* Remover a margem direita para alinhar à esquerda */
+  }
+  .search-container {
+    top: 111px;
   }
 }

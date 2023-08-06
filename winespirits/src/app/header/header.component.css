@@ -33,11 +33,14 @@
   cursor: pointer;
   font-size: 24px;
   margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+  justify-content: space-between;
+  position: static;
 }
 
 /* Estilos para a lista de opções do menu */
 .menu-list {
-  display: none;
+  justify-content: space-between;
+  position: static;
   background-color: white;
   padding: 10px;
   width: 200px;
@@ -45,6 +48,7 @@
   position: absolute;
   top: 58px;
   right: 0px;
+  z-index: 999; /* Ajuste o valor do z-index conforme necessário */
 }
 
 .menu-list ul {

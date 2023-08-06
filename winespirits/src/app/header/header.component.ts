@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen: boolean = false;
+  loggedInEmail: string = ''; // Variável para armazenar o email do usuário logado
+
+  constructor(private authService: AuthenticationService) {
+    // Atualiza a variável loggedInEmail ao inicializar o HeaderComponent
+    this.loggedInEmail = this.authService.getLoggedInEmail();
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
   get menuStyles() {
     return {
-      'display': this.isMenuOpen ? 'block' : 'none'
+      display: this.isMenuOpen ? 'block' : 'none'
     };
   }
-
 }
