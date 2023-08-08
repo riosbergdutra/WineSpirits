@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Wine } from '../interface/wine';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +26,5 @@ export class WineService {
     }
 
     return this.http.get<Wine[]>(this.apiUrl, { params });
-  }
-
-  getWineDetails(type: string): Observable<Wine | undefined> {
-    return this.http.get<Wine[]>(this.apiUrl).pipe(
-      map((wines: Wine[]) => wines.find(wine => wine.type === type))
-    );
   }
 }

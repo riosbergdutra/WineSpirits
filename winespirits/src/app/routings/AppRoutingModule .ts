@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, // Página de login
   { path: 'cadastro', component: CadastrarSeComponent },   // Página de cadastro
   { path: 'vinho/:type/:id', component: WinesComponent }
+
 ];
 
 @NgModule({
