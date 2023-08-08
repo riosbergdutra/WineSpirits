@@ -18,22 +18,20 @@ export class WineService {
 
   realizarPesquisaAvancada(tipoVinho: string, precoMinimo: number): Observable<Wine[]> {
     // Realize a chamada para a API com os parâmetros de pesquisa avançada
+    const params: any = {};
+    if (tipoVinho && tipoVinho.trim() !== '') {
+      params.type = tipoVinho;
+    }
+    if (precoMinimo && precoMinimo > 0) {
+      params.price = precoMinimo;
+    }
+
+    return this.http.get<Wine[]>(this.apiUrl, { params });
+  }
+
+  getWineDetails(type: string): Observable<Wine | undefined> {
     return this.http.get<Wine[]>(this.apiUrl).pipe(
-      map((wines: Wine[]) => {
-        // Filtrar por tipo de vinho (se o tipo for selecionado)
-        if (tipoVinho && tipoVinho.trim() !== '') {
-          wines = wines.filter((wine: Wine) => wine.type === tipoVinho);
-        }
-
-        // Filtrar por preço mínimo (se o preço mínimo for informado)
-        if (precoMinimo && precoMinimo > 0) {
-          wines = wines.filter((wine: Wine) => wine.price >= precoMinimo);
-        }
-
-        // Adicione mais lógicas de filtragem aqui para outros campos de pesquisa, se necessário
-
-        return wines;
-      })
+      map((wines: Wine[]) => wines.find(wine => wine.type === type))
     );
   }
 }

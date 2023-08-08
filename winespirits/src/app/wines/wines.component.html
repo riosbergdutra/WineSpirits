@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div *ngIf="wine$ | async as wine" class="wine-details">
+  <h2>{{ wine.name }}</h2>
+  <p>Tipo: {{ wine.type }}</p>
+  <p>Ano: {{ wine.year }}</p>
+  <p>Preço: {{ wine.price }}</p>
+  <!-- Outras informações do vinho -->
+</div>
+<app-footer></app-footer>

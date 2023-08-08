@@ -1,12 +1,13 @@
 <div class="vinhos-container">
-    <div class="search-container">
-      <label for="tipoVinho">Tipo de Vinho:</label>
-      <input id="tipoVinho" [(ngModel)]="tipoVinho" (input)="capitalizarPrimeiraLetra()" >
-
+  <div class="search-container">
+    <label for="tipoVinho">Tipo de Vinho:</label>
+    <input id="tipoVinho" [(ngModel)]="tipoVinho" (input)="capitalizarPrimeiraLetra()">
     <button (click)="pesquisar()">Pesquisar</button>
   </div>
-  <div *ngFor="let wine of wines" class="vinhos">
+  <div *ngFor="let wine of wines" class="vinhos" id="wine-{{ wine.id }}">
+      <a [routerLink] ="['/vinho', wine.type.toLowerCase(), wine.id]">
     <img [src]="wine.imageUrl" alt="{{ wine.name }}" class="wine-image">
+    </a>
     <h3 class="name">{{ wine.name }}</h3>
     <p class="Tipo">Tipo: {{ wine.type }}</p>
     <p class="Ano">Ano: {{ wine.year }}</p>

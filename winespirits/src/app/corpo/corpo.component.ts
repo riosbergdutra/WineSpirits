@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Wine } from '../interface/wine';
 import { WineService } from '../services/wine.service';
+import { ActivatedRoute, Router } from '@angular/router'; // Importe o Router
 @Component({
   selector: 'app-corpo',
   templateUrl: './corpo.component.html',
@@ -8,12 +9,17 @@ import { WineService } from '../services/wine.service';
 })
 export class CorpoComponent {
   wines: Wine[] = [];
-  tipoVinho: string = ''; // Valor padrão vazio para o tipoVinho
-  precoMinimo: number = 0; // Valor padrão de 0 para o precoMinimo
-  constructor(private wineService: WineService) { }
+  tipoVinho: string = '';
+  precoMinimo: number = 0; 
+  constructor(
+    private wineService: WineService,
+    private router: Router // Injete o Router
+  ) { }
+
   ngOnInit() {
     this.loadWines();
   }
+
   loadWines() {
     this.wineService.getWines().subscribe(
       (data) => {
@@ -24,12 +30,11 @@ export class CorpoComponent {
       }
     );
   }
+
   pesquisar() {
-    // Chame o serviço de pesquisa com os parâmetros fornecidos
     this.wineService.realizarPesquisaAvancada(
       this.tipoVinho,
       this.precoMinimo
-      // Adicione outros parâmetros da pesquisa avançada aqui, se necessário
     ).subscribe(
       (data) => {
         this.wines = data;
@@ -39,9 +44,16 @@ export class CorpoComponent {
       }
     );
   }
+
   capitalizarPrimeiraLetra() {
     if (this.tipoVinho && this.tipoVinho.length > 0) {
       const palavras = this.tipoVinho.toLowerCase().split(' ');
-      this.tipoVinho = palavras.map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1)).join(' ');}
+      this.tipoVinho = palavras.map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1)).join(' ');
     }
+  }
+
+  // Função para navegar para a página de detalhes do vinho
+  goToWineDetail(wineId: string) {
+    this.router.navigate(['/vinho', wineId]);
+  }
 }
