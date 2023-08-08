@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { CadastrarSeComponent } from './cadastrar-se/cadastrar-se.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { WinesComponent } from './wines/wines.component';
 
 
 @NgModule({
@@ -23,8 +22,7 @@ import { WinesComponent } from './wines/wines.component';
     FooterComponent,
     CadastrarSeComponent,
     LoginComponent,
-    WinesComponent,
-
+    
   ],
   imports: [
     BrowserModule,
