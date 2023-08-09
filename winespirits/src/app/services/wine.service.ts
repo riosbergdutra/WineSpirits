@@ -16,7 +16,6 @@ export class WineService {
   }
 
   realizarPesquisaAvancada(tipoVinho: string, precoMinimo: number): Observable<Wine[]> {
-    // Realize a chamada para a API com os parâmetros de pesquisa avançada
     const params: any = {};
     if (tipoVinho && tipoVinho.trim() !== '') {
       params.type = tipoVinho;
@@ -26,5 +25,9 @@ export class WineService {
     }
 
     return this.http.get<Wine[]>(this.apiUrl, { params });
+  }
+
+  getVinho(id: number): Observable<Wine> {
+    return this.http.get<Wine>(`${this.apiUrl}/${id}`);
   }
 }
