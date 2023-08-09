@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { AppRoutingModule } from './routings/AppRoutingModule ';
+import { AppRoutingModule } from './routings/AppRoutingModule';
 import { HomeComponent } from './home/home.component';
 import { CorpoComponent } from './corpo/corpo.component';
 import { FooterComponent } from './footer/footer.component';

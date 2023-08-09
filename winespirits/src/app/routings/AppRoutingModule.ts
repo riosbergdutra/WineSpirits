@@ -6,10 +6,10 @@ import { LoginComponent } from '../login/login.component';
 import { WinesComponent } from '../wines/tinto.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, // Página inicial - Home
-  { path: 'login', component: LoginComponent }, // Página de login
-  { path: 'cadastro', component: CadastrarSeComponent },   // Página de cadastro
-  { path: 'vinho/:id', component: WinesComponent } // Use :id como um parâmetro dinâmico
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'cadastro', component: CadastrarSeComponent },
+  { path: 'vinho/:id', component: WinesComponent }
 ];
 
 
