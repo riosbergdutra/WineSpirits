@@ -8,7 +8,13 @@
   border-radius: 5px;
   background-color: white;
 }
-
+h2 {
+  text-align: justify;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.descrição {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .wine-image {
   max-width: 100%;
   height: auto;
@@ -25,17 +31,19 @@
 }
 
 .name {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.1em;
+  margin-bottom: 19px;
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .button-container {
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .quantity-container {
@@ -65,6 +73,7 @@
 .quantity-value {
   font-size: 0.9rem;
   margin: 0 10px;
+  text-align: center;
 }
 
 input.quantity-value {
@@ -105,15 +114,16 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Media queries para responsividade */
 @media (max-width: 768px) {
+  h2 {
+    text-align: center;
+  }
   .wines {
     flex-direction: column;
     align-items: center;
   }
 
   .wine-image {
-    min-width: auto;
-    max-width: 60%;
-    width: 100%;
+    max-width: 100%;
     min-width: unset;
   }
 
@@ -125,5 +135,8 @@ input[type="number"]::-webkit-outer-spin-button {
   .button-container {
     flex-direction: column;
     align-items: center;
+  }
+  .name{
+    margin-bottom: 4px;
   }
 }
