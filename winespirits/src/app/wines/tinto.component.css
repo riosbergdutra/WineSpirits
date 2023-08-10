@@ -1,3 +1,4 @@
+/* Estilos base */
 .wines {
   display: flex;
   align-items: flex-start;
@@ -5,19 +6,18 @@
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  background-color:white;
+  background-color: white;
 }
 
 .wine-image {
   max-width: 100%;
-    height: auto;
-    width: auto;
-    display: block;
-    margin: 1px;
-    min-width: 500px;
-    background-color: transparent;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: 1px;
+  min-width: 500px;
+  background-color: transparent;
 }
-
 
 .info-container {
   display: flex;
@@ -49,17 +49,17 @@
 }
 
 .quantity-buttons {
-  display: flex; /* Para alinhar os botões de quantidade */
+  display: flex;
   align-items: center;
 }
 
 .quantity-buttons button {
-  background-color: transparent; /* Alterado para fundo transparente */
+  background-color: transparent;
   border: none;
   padding: 5px 10px;
   font-size: 1.9rem;
   cursor: pointer;
-  margin-right: 5px; /* Espaçamento entre os botões */
+  margin-right: 5px;
 }
 
 .quantity-value {
@@ -82,6 +82,7 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }
+
 .Comprar {
   display: flex;
   align-items: center;
@@ -95,9 +96,34 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+  transition: background-color 0.3s ease;
 }
 
 .Comprar button:hover {
-  background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+  background-color: #0056b3;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .wines {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wine-image {
+    min-width: auto;
+    max-width: 60%;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .info-container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
