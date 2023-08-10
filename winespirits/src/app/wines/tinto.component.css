@@ -1,0 +1,103 @@
+.wines {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color:white;
+}
+
+.wine-image {
+  max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 1px;
+    min-width: 500px;
+    background-color: transparent;
+}
+
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 1.2rem;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-label {
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.quantity-buttons {
+  display: flex; /* Para alinhar os botões de quantidade */
+  align-items: center;
+}
+
+.quantity-buttons button {
+  background-color: transparent; /* Alterado para fundo transparente */
+  border: none;
+  padding: 5px 10px;
+  font-size: 1.9rem;
+  cursor: pointer;
+  margin-right: 5px; /* Espaçamento entre os botões */
+}
+
+.quantity-value {
+  font-size: 0.9rem;
+  margin: 0 10px;
+}
+
+input.quantity-value {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 68px;
+  background-color: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.Comprar {
+  display: flex;
+  align-items: center;
+}
+
+.Comprar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+.Comprar button:hover {
+  background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}

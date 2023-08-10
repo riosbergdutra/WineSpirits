@@ -1,5 +1,23 @@
 <div *ngIf="wine" class="wines">
-  <p>ID: {{wine.id}}</p>
-  <p>nome: {{wine.name}}</p>
-  
+  <img [src]="wine.imageUrl" alt="{{ wine.name }}" class="wine-image large-image">
+
+  <div class="info-container">
+    <h3 class="name">{{ wine.description }}</h3>
+    <p class="price">R$ {{ wine.price * quantity }}</p>
+
+    <div class="button-container">
+      <div class="quantity-container">
+        <div class="quantity-buttons">
+          <button (click)="decreaseQuantity()">-</button>
+          <input type="number" [(ngModel)]="quantity" min="1" class="quantity-value">
+          <button (click)="increaseQuantity()">+</button>
+        </div>
+      </div>
+      <div class="Comprar"><button>Comprar</button></div>
+    </div>
+
+    <div class="description">
+      <p>{{ wine.productdescription }}</p>
+    </div>
+  </div>
 </div>

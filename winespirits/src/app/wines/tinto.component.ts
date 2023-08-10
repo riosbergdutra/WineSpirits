@@ -21,4 +21,15 @@ export class WinesComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.wineService.getVinho(id).subscribe((wine) => (this.wine = wine));
   }
+  quantity = 1;
+
+  increaseQuantity() {
+    this.quantity++;
+  }
+
+  decreaseQuantity() {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
 }
