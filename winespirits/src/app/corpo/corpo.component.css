@@ -76,6 +76,7 @@ button:hover {
 
 .vinhos:hover {
   transform: scale(1.1); /* Aumentar o tamanho do elemento em 10% no efeito hover */
+  box-shadow: 1px 3px 5px rgb(76, 76, 76);
 }
 
 /* Estilos para o texto de tipo de vinho */
