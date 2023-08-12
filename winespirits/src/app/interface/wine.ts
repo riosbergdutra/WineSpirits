@@ -7,4 +7,5 @@ export interface Wine {
   price: number;
   description: string;
   productdescription: string;
+  url: string;
 }

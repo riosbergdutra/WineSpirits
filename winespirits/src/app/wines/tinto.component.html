@@ -14,7 +14,14 @@
         </div>
       </div>
       <div class="Comprar"><button>Comprar</button></div>
-      <div class="compartilhar">compartilhar</div>
+      <div class="compartilhar" (click)="showShareOverlay = true">Compartilhar</div>
+
+  <div class="overlay" *ngIf="showShareOverlay">
+    <div class="overlay-content">
+      <p>Clique para copiar a URL:</p>
+    </div>
+    <div class="overlay-background" (click)="showShareOverlay = false"></div>
+  </div>
     </div>
 
     <div class="description">

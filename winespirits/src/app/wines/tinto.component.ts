@@ -32,4 +32,7 @@ export class WinesComponent implements OnInit {
       this.quantity--;
     }
   }
+
+  showShareOverlay = false;
+
 }

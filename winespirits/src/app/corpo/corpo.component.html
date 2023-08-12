@@ -6,7 +6,7 @@
   </div>
   <div *ngFor="let wine of wines" class="vinhos" id="wine-{{ wine.id }}">
       <a routerLink ="/vinho/ {{wine.id}}">
-    <img [src]="wine.imageUrl" alt="{{ wine.name }}" class="wine-image">
+    <img [src]="wine.imageUrl" alt="{{ wine.id }}" class="wine-image">
     </a>
     <h3 class="name">{{ wine.name }}</h3>
     <p class="Tipo">Tipo: {{ wine.type }}</p>
