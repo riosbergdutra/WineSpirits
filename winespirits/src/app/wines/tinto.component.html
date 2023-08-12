@@ -18,7 +18,7 @@
     </div>
 
     <div class="description">
-      <h2>Descrição</h2>
+      <h2>descrição</h2>
       <br>
       <p class="descrição">{{ wine.productdescription }}</p>
     </div>
@@ -26,15 +26,44 @@
 
   <div class="overlay" *ngIf="showShareOverlay">
     <div class="overlay-content">
+      <div><h3>compartilhar</h3></div>
       <a
-  href="https://www.facebook.com/sharer/sharer.php?u={{ wine.url }}"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Compartilhar no Facebook
-</a>
-      <p>copie a url</p>
+      href="https://api.whatsapp.com/send?text={{ wine.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Compartilhar no WhatsApp
+    </a>
+
+    <!-- Botão de compartilhamento para Facebook -->
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{ wine.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Compartilhar no Facebook
+    </a>
+    <a
+        href="https://twitter.com/intent/tweet?url={{ wine.url }}&text=Confira este vinho incrível!"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Compartilhar no Twitter
+      </a>
+
+      <!-- Botão de compartilhamento por e-mail -->
+      <a
+        href="mailto:?subject=Confira este vinho incrível&body={{ wine.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Compartilhar por E-mail
+      </a>
+      <p>Clique para copiar a URL:</p>
       <input type="text" [value]="wine.url" readonly>
+
+      <!-- Botão de compartilhamento para WhatsApp -->
+
     </div>
     <div class="overlay-background" (click)="showShareOverlay = false"></div>
   </div>

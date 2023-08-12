@@ -10,6 +10,9 @@ import { WineService } from '../services/wine.service';
 })
 export class WinesComponent implements OnInit {
   wine: Wine | undefined;
+  showShareOverlay = false;
+  quantity = 1;
+
 
   constructor(private wineService: WineService, private route: ActivatedRoute) {}
 
@@ -23,11 +26,9 @@ export class WinesComponent implements OnInit {
       this.wine = wine;
 
       // Suponhamos que você tenha a propriedade wine com as informações do vinho
-      this.wine.url = wine.url; // Substitua pelo URL real
+      
     });
   }
-
-  quantity = 1;
 
   increaseQuantity() {
     this.quantity++;
@@ -39,8 +40,5 @@ export class WinesComponent implements OnInit {
     }
   }
 
-  showShareOverlay = false;
-  encodeUriComponent(url: string): string {
-    return encodeURIComponent(url);
-  }
+
 }
