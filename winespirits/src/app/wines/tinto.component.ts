@@ -12,7 +12,8 @@ export class WinesComponent implements OnInit {
   wine: Wine | undefined;
   showShareOverlay = false;
   quantity = 1;
-
+  isCopied = false;
+  buttonText = 'Copiar';
 
   constructor(private wineService: WineService, private route: ActivatedRoute) {}
 
@@ -24,9 +25,6 @@ export class WinesComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.wineService.getVinho(id).subscribe((wine) => {
       this.wine = wine;
-
-      // Suponhamos que você tenha a propriedade wine com as informações do vinho
-      
     });
   }
 
@@ -40,5 +38,12 @@ export class WinesComponent implements OnInit {
     }
   }
 
-
+  copyUrl(url: string) {
+    const input = document.createElement('input');
+    input.value = url;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+  }
 }
