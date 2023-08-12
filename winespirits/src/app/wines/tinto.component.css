@@ -139,6 +139,9 @@ input[type="number"]::-webkit-outer-spin-button {
   .name{
     margin-bottom: 4px;
   }
+  .compartilhar {
+    width: 53%;
+  }
 }
 .overlay {
   display: flex;
@@ -157,7 +160,11 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: fixed; /* Alterado para position: fixed */
+  top: 50%; /* Adicionado para centralizar verticalmente */
+  left: 50%; /* Adicionado para centralizar horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o conteúdo */
+  z-index: 1000;
 }
 
 .overlay-content p {
@@ -181,4 +188,18 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100%;
   height: 100%;
   z-index: 999;
+}
+
+.compartilhar{
+  border: none;
+  background-color: #2ab811;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin: 11px 2px 1px 6px;
+  color: white;
+}
+.compartilhar:hover {
+  background-color:  #319a1e;
 }
