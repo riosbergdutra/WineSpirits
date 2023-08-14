@@ -12,6 +12,9 @@
   left: 30%;
   background-color: white;
 }
+h2 {
+  text-align: center;
+}
 
 .form-group {
   margin-bottom: 15px;

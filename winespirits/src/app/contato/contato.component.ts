@@ -1,17 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contato',
   templateUrl: './contato.component.html',
   styleUrls: ['./contato.component.css']
 })
-export class ContatoComponent {
+export class ContatoComponent implements OnInit {
+  contactForm: FormGroup = this.formBuilder.group({
+    subjectTitle: ['', Validators.required],
+    userEmail: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required]
+  });
   submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
-    // Aqui você pode adicionar a lógica para processar o formulário
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {}
+
+  onSubmit(): void {
+    if (this.contactForm.valid) {
+      this.submitted = true;
+    }
   }
 }
