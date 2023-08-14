@@ -1,4 +1,14 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+}
+
 .map-container {
-  width: 100%;
-  height: 400px; /* Defina a altura desejada para o mapa */
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
