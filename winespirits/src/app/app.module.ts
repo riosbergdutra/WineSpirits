@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { WinesComponent } from './wines/tinto.component';
 import { ContatoComponent } from './contato/contato.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ContatoComponent } from './contato/contato.component';
     LoginComponent,
     WinesComponent,
     ContatoComponent,
+    MapComponent,
 
   ],
   imports: [
