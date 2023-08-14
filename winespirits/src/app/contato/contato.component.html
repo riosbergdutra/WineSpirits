@@ -1,1 +1,30 @@
-<p>contato works!</p>
+<div class="contact-form">
+  <h2>Entre em Contato</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="subjectTitle">Título do Assunto</label>
+      <input type="text" id="subjectTitle" name="subjectTitle" ngModel required>
+      <div *ngIf="contactForm.controls['subjectTitle'].invalid && (contactForm.controls['subjectTitle'].dirty || contactForm.controls['subjectTitle'].touched)" class="error-message">
+        Título do Assunto é obrigatório.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Email do Usuário</label>
+      <input type="email" id="userEmail" name="userEmail" ngModel required email>
+      <div *ngIf="contactForm.controls['userEmail'].invalid && (contactForm.controls['userEmail'].dirty || contactForm.controls['userEmail'].touched)" class="error-message">
+        Email do Usuário é obrigatório e deve ser válido.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Assunto</label>
+      <textarea id="message" name="message" ngModel required></textarea>
+      <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)" class="error-message">
+        Assunto é obrigatório.
+      </div>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+  <div class="submission-message" *ngIf="submitted">
+    O formulário foi enviado com sucesso!
+  </div>
+</div>
