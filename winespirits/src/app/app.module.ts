@@ -12,6 +12,7 @@ import { CadastrarSeComponent } from './cadastrar-se/cadastrar-se.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { WinesComponent } from './wines/tinto.component';
+import { ContatoComponent } from './contato/contato.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { WinesComponent } from './wines/tinto.component';
     CadastrarSeComponent,
     LoginComponent,
     WinesComponent,
+    ContatoComponent,
 
   ],
   imports: [
