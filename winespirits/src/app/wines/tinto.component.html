@@ -1,6 +1,5 @@
 <div *ngIf="wine" class="wines">
   <img [src]="wine.imageUrl" alt="{{ wine.name }}" class="wine-image large-image">
-
   <div class="info-container">
     <h1 class="name">{{ wine.description }}</h1>
     <p class="price">R$ {{ wine.price * quantity }}</p>
@@ -21,6 +20,7 @@
       <h2>descrição</h2>
       <br>
       <p class="descrição">{{ wine.productdescription }}</p>
+      <app-wine-details></app-wine-details>
     </div>
   </div>
 

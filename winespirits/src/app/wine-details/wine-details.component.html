@@ -1,1 +1,18 @@
-<p>wine-details works!</p>
+<div *ngIf="wine">
+  <!-- Exibir detalhes do vinho principal -->
+  <h2>{{ wine.name }}</h2>
+  <p>Type: {{ wine.type }}</p>
+  <p>Price: {{ wine.price }}</p>
+  <p>Description: {{ wine.description }}</p>
+
+  <!-- Exibir itens relacionados -->
+  <h3>Related Wines</h3>
+  <div class="related-wines">
+    <div *ngFor="let relatedWine of relatedWines" class="related-wine">
+      <img [src]="relatedWine.imageUrl" alt="{{ relatedWine.name }}" />
+      <h4>{{ relatedWine.name }}</h4>
+      <p>Type: {{ relatedWine.type }}</p>
+      <p>Price: {{ relatedWine.price }}</p>
+    </div>
+  </div>
+</div>
