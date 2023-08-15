@@ -1,11 +1,6 @@
 <div *ngIf="wine">
-  <!-- Exibir detalhes do vinho principal -->
-  <h2>{{ wine.name }}</h2>
-  <p>Type: {{ wine.type }}</p>
-  <p>Price: {{ wine.price }}</p>
-  <p>Description: {{ wine.description }}</p>
+  <!-- ... (detalhes do vinho principal) ... -->
 
-  <!-- Exibir itens relacionados -->
   <h3>Related Wines</h3>
   <div class="related-wines">
     <div *ngFor="let relatedWine of relatedWines" class="related-wine">

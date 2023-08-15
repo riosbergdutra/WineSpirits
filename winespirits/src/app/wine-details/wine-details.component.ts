@@ -21,15 +21,18 @@ export class WineDetailsComponent implements OnInit {
   loadWineAndRelated(): void {
     const wineId = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.wineService.getWine(wineId).subscribe(wine => {
+    this.wineService.getWineById(wineId).subscribe(wine => {
       this.wine = wine;
-      this.loadRelatedWines(this.wine.type);
+      this.loadRelatedWines(wine?.type || ''); // Passando o tipo do vinho, ou uma string vazia se for nulo
     });
   }
 
   loadRelatedWines(type: string): void {
     this.wineService.getRelatedWinesByType(type).subscribe(relatedWines => {
-      this.relatedWines = relatedWines;
+      // Excluindo o próprio vinho da lista de relacionados
+      if (this.wine) {
+        this.relatedWines = relatedWines.filter(relatedWine => relatedWine.id !== this.wine.id);
+      }
     });
   }
 }

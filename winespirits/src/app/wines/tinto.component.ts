@@ -23,7 +23,7 @@ export class WinesComponent implements OnInit {
 
   getWine(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.wineService.getVinho(id).subscribe((wine) => {
+    this.wineService.getWineById(id).subscribe((wine) => {
       this.wine = wine;
     });
   }

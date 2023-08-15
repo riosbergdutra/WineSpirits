@@ -31,13 +31,13 @@ export class WineService {
     return this.http.get<Wine>(`${this.apiUrl}/${id}`);
   }
 
-  getWine(id: number): Observable<Wine> {
-    const url = `${this.apiUrl}/wines/${id}`;
+  getWineById(id: number): Observable<Wine> {
+    const url = `${this.apiUrl}/${id}`;
     return this.http.get<Wine>(url);
   }
 
   getRelatedWinesByType(type: string): Observable<Wine[]> {
-    const url = `${this.apiUrl}/wines?tipo=${type}&_limit=3`; // Substitua 'tipo' pelo campo correspondente na sua API
+    const url = `${this.apiUrl}?type=${type}&_limit=3`; // Substitua 'type' pelo campo correspondente na sua API
     return this.http.get<Wine[]>(url);
   }
 }
