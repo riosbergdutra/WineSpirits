@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { WinesComponent } from './wines/tinto.component';
 import { ContatoComponent } from './contato/contato.component';
 import { MapComponent } from './map/map.component';
+import { WineDetailsComponent } from './wine-details/wine-details.component';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { MapComponent } from './map/map.component';
     WinesComponent,
     ContatoComponent,
     MapComponent,
+    WineDetailsComponent,
+
 
   ],
   imports: [

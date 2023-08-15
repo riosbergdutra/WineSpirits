@@ -30,4 +30,14 @@ export class WineService {
   getVinho(id: number): Observable<Wine> {
     return this.http.get<Wine>(`${this.apiUrl}/${id}`);
   }
+
+  getWine(id: number): Observable<Wine> {
+    const url = `${this.apiUrl}/wines/${id}`;
+    return this.http.get<Wine>(url);
+  }
+
+  getRelatedWinesByType(type: string): Observable<Wine[]> {
+    const url = `${this.apiUrl}/wines?tipo=${type}&_limit=3`; // Substitua 'tipo' pelo campo correspondente na sua API
+    return this.http.get<Wine[]>(url);
+  }
 }
