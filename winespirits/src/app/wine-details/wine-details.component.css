@@ -1,0 +1,38 @@
+.Wines {
+  display: flex;
+  flex-direction: column; /* Agora, os vinhos relacionados ficarão um abaixo do outro */
+  align-items: center; /* Centralizar horizontalmente */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.related-wines {
+  display: flex;
+  flex-wrap: wrap; /* Para que os vinhos quebrem para a próxima linha */
+  justify-content: center; /* Centralizar horizontalmente */
+  gap: 10px; /* Espaçamento entre os vinhos */
+  transition: transform 0.3s ease;
+}
+
+.related-wine {
+  flex-basis: calc(20.33% - 28px);
+    border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+.related-wine:hover {
+  transform: scale(1.1); /* Aumentar o tamanho do elemento em 10% no efeito hover */
+  box-shadow: 1px 3px 5px rgb(76, 76, 76);
+}
+
+.related-wine img {
+  max-width: 100%; /* Certificar-se de que a imagem não ultrapasse a largura do contêiner */
+}
+
+.itens {
+  text-align: center;
+}
