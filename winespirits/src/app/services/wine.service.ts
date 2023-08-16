@@ -8,9 +8,7 @@ import { Wine } from '../interface/wine';
 })
 export class WineService {
   private apiUrl = 'http://localhost:3000/wines'; // Substitua pela URL da sua API de vinhos
-
   constructor(private http: HttpClient) { }
-
   getWines(): Observable<Wine[]> {
     return this.http.get<Wine[]>(this.apiUrl);
   }

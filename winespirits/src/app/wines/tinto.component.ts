@@ -20,7 +20,6 @@ export class WinesComponent implements OnInit {
   ngOnInit(): void {
     this.getWine();
   }
-
   getWine(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.wineService.getWineById(id).subscribe((wine) => {
