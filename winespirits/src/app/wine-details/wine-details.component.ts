@@ -30,8 +30,10 @@ export class WineDetailsComponent implements OnInit {
   loadRelatedWines(type: string): void {
     this.wineService.getRelatedWinesByType(type).subscribe(relatedWines => {
       // Excluindo o próprio vinho da lista de relacionados
-      if (this.wine) {
-        this.relatedWines = relatedWines.filter(relatedWine => relatedWine.id !== this.wine.id);
+      if (this.wine && this.wine.id) {
+        this.relatedWines = relatedWines.filter(relatedWine => relatedWine.id !== this.wine?.id);
+      } else {
+        this.relatedWines = relatedWines; // Defina a lista completa se this.wine for nulo
       }
     });
   }
