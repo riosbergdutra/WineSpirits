@@ -15,7 +15,7 @@ export class WineDetailsComponent implements OnInit {
   constructor(private wineService: WineService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.loadWineAndRelated();
+    this.loadWineAndRelated()
   }
 
   loadWineAndRelated(): void {
@@ -40,7 +40,6 @@ export class WineDetailsComponent implements OnInit {
       }
     });
   }
-
   shuffleRelatedWines(): void {
     for (let i = this.relatedWines.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
