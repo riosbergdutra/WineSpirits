@@ -1,18 +1,18 @@
-<div *ngIf="wine" class="Wines">
-  <h3>Vinhos relacionados</h3>
-  <div class="related-wines">
-      <div *ngFor="let relatedWine of relatedWines" class="related-wine">
-      <div class="imagem"><a routerLink ="/vinho/{{wine.id}}"><img [src]="relatedWine.imageUrl" alt="{{ relatedWine.name }}" /></a></div>
-      <div class="itens">
-        <div class="nome">
-          <h4>{{ relatedWine.name }}</h4>
-        </div>
-        <div class="tipo">
-          <p>Type: {{ relatedWine.type }}</p>
-        </div>
-        <div class="price">
-          <p>Price: {{ relatedWine.price }}</p>
-        </div>
+<h3>Vinhos relacionados</h3>
+<div class="related-wines">
+  <div *ngFor="let relatedWine of relatedWines" class="related-wine">
+    <a routerLink="/vinho/{{relatedWine.id}}">
+      <img [src]="relatedWine.imageUrl" alt="{{ relatedWine.name }}" />
+    </a>
+    <div class="itens">
+      <div class="nome">
+        <h4>{{ relatedWine.name }}</h4>
+      </div>
+      <div class="tipo">
+        <p>Type: {{ relatedWine.type }}</p>
+      </div>
+      <div class="price">
+        <p>Price: {{ relatedWine.price }}</p>
       </div>
     </div>
   </div>

@@ -15,16 +15,39 @@ export class WinesComponent implements OnInit {
   isCopied = false;
   buttonText = 'Copiar';
 
+  // Propriedades para armazenar URLs de compartilhamento
+  whatsappShareUrl = '';
+  facebookShareUrl = '';
+  twitterShareUrl = '';
+  emailShareUrl = '';
+  copyUrlInput = ''; // Propriedade para armazenar a URL a ser copiada
+
+
   constructor(private wineService: WineService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getWine();
   }
+
   getWine(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.wineService.getWineById(id).subscribe((wine) => {
       this.wine = wine;
+      // Construir URLs de compartilhamento dinamicamente
+      this.buildShareUrls();
     });
+  }
+
+  buildShareUrls() {
+    const baseAppUrl = window.location.href;
+    const wineId = this.wine?.id || '';
+
+    this.whatsappShareUrl = `https://api.whatsapp.com/send?text=${baseAppUrl}`;
+    this.facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${baseAppUrl}`;
+    this.twitterShareUrl = `https://twitter.com/intent/tweet?url=${baseAppUrl}&text=Confira este vinho incrível!`;
+    this.emailShareUrl = `mailto:?subject=Confira este vinho incrível&body=${baseAppUrl}`;
+    this.copyUrlInput = baseAppUrl;
+
   }
 
   increaseQuantity() {

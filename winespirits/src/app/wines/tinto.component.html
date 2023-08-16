@@ -26,40 +26,23 @@
 
   <div class="overlay" *ngIf="showShareOverlay">
     <div class="overlay-content">
-      <div class="compartilhar-h3"><h3>compartilhar</h3></div>
-      <div class="share-buttons-container">
-        <a
-          href="https://api.whatsapp.com/send?text={{ wine.url }}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Compartilhar no WhatsApp
-        </a>
-        <a
-          href="https://www.facebook.com/sharer/sharer.php?u={{ wine.url }}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Compartilhar no Facebook
-        </a>
-        <a
-          href="https://twitter.com/intent/tweet?url={{ wine.url }}&text=Confira este vinho incrível!"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Compartilhar no Twitter
-        </a>
-        <a
-          href="mailto:?subject=Confira este vinho incrível&body={{ wine.url }}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Compartilhar por E-mail
-        </a>
-      </div>
+      <!-- ... (outros elementos) ... -->
+      <a [href]="whatsappShareUrl" target="_blank" rel="noopener noreferrer">
+        Compartilhar no WhatsApp
+      </a>
+      <a [href]="facebookShareUrl" target="_blank" rel="noopener noreferrer">
+        Compartilhar no Facebook
+      </a>
+      <a [href]="twitterShareUrl" target="_blank" rel="noopener noreferrer">
+        Compartilhar no Twitter
+      </a>
+      <a [href]="emailShareUrl" target="_blank" rel="noopener noreferrer">
+        Compartilhar por E-mail
+      </a>
       <div class="copy-url-container">
-        <input type="text" [value]="wine.url" readonly id="urlInput">
-        <button (click)="copyUrl(wine.url)">Copiar</button>
+        <input type="text" [value]="copyUrlInput" readonly id="urlInput">
+        <button (click)="copyUrl(copyUrlInput)">Copiar</button>
       </div>
     </div>
     <div class="overlay-background" (click)="showShareOverlay = false"></div>
+  </div>
