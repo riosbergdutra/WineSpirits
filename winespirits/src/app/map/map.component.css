@@ -6,9 +6,18 @@
 }
 
 .map-container {
-  width: 90%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 89%;
+  height: 26%;
+  position: absolute;
+  top: 77%;
+  left: calc(77% - 70%);
+}
+@media screen and (max-width: 700px) {
+  .map-container {
+    width: 89%;
+    height: 26%;
+    position: absolute;
+    top: 83%;
+    left: calc(77% - 70%);
+  }
 }

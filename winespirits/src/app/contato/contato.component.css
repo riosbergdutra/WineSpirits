@@ -1,15 +1,16 @@
 .contact-form {
   width: 100%;
   max-width: 511px;
-  margin: 20px auto;
+  margin: auto; /* Centraliza horizontalmente */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4%;
   height: auto;
   box-sizing: border-box;
   position: absolute;
-  top: 15%;
-  left: 30%;
+  top: 50%; /* Posiciona no centro vertical */
+  left: 50%; /* Posiciona no centro horizontal */
+  transform: translate(-50%, -50%); /* Centraliza perfeitamente */
   background-color: white;
 }
 h2 {

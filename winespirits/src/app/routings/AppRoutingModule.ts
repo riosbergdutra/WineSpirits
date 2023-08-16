@@ -5,8 +5,6 @@ import { CadastrarSeComponent } from '../cadastrar-se/cadastrar-se.component';
 import { LoginComponent } from '../login/login.component';
 import { WinesComponent } from '../wines/tinto.component';
 import { ContatoComponent } from '../contato/contato.component';
-import { MapComponent } from '../map/map.component';
-import { WineDetailsComponent } from '../wine-details/wine-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,8 +12,6 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastrarSeComponent },
   { path: 'vinho/:id', component: WinesComponent },
   {path: 'contato', component: ContatoComponent},
-  {path: 'map', component: MapComponent},
-  {path: 'winedetail', component: WineDetailsComponent}
 ];
 
 
