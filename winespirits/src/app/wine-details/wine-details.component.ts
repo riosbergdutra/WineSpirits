@@ -23,7 +23,9 @@ export class WineDetailsComponent implements OnInit {
 
     this.wineService.getWineById(wineId).subscribe(wine => {
       this.wine = wine;
-      this.loadRelatedWines(wine?.type || ''); // Passando o tipo do vinho, ou uma string vazia se for nulo
+      if (wine && wine.type) {
+        this.loadRelatedWines(wine.type);
+      }
     });
   }
 
@@ -32,9 +34,17 @@ export class WineDetailsComponent implements OnInit {
       // Excluindo o próprio vinho da lista de relacionados
       if (this.wine && this.wine.id) {
         this.relatedWines = relatedWines.filter(relatedWine => relatedWine.id !== this.wine?.id);
+        this.shuffleRelatedWines(); // Embaralhar a lista de vinhos relacionados
       } else {
         this.relatedWines = relatedWines; // Defina a lista completa se this.wine for nulo
       }
     });
+  }
+
+  shuffleRelatedWines(): void {
+    for (let i = this.relatedWines.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.relatedWines[i], this.relatedWines[j]] = [this.relatedWines[j], this.relatedWines[i]];
+    }
   }
 }
