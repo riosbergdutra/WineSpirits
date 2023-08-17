@@ -1,0 +1,15 @@
+<div class="formulario">
+    <form class="form" [formGroup]="formgroup"  (ngSubmit)="onSubmit()" >
+      <div class="login"><h1>Já tenho cadastro</h1></div>
+      <div class="name">
+        <label for="email"></label>
+        <input type="email" id="email" formControlName="email" placeholder="Email">
+      </div>
+      <div class="password">
+        <label for="password"></label>
+        <input type="password" id="password" formControlName="password" placeholder="Senha">
+      </div>
+      <button type="submit" class="Entrar">Entrar</button>
+    </form>
+    <a routerLink="/cadastro" class="conta-nova">Criar conta</a>
+  </div>
