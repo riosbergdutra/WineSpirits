@@ -1,29 +1,45 @@
 <div class="product-form-container">
-  <h2>Cadastrar Novo Produto</h2>
-  <form (ngSubmit)="onSubmit()">
+  <div class="name">
+    <h2>Cadastrar Novo Produto</h2>
+  </div>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
     <label for="name">Nome do Produto:</label>
     <input type="text" id="name" [(ngModel)]="product.name" name="name" required>
 
-    <label for="year">Ano:</label>
-    <input type="number" id="year" [(ngModel)]="product.year" name="year" required>
+    <div class="ano">
+      <label for="year">Ano:</label>
+      <input type="number" id="year" [(ngModel)]="product.year" name="year" required>
+    </div>
 
-    <label for="type">Tipo:</label>
-    <input type="text" id="type" [(ngModel)]="product.type" name="type" required>
+    <div class="tipo">
+      <label for="type">Tipo:</label>
+      <select id="type" [(ngModel)]="product.type" name="type" required>
+        <option value="Tinto">Tinto</option>
+        <option value="Branco">Branco</option>
+        <option value="Rosé">Rosé</option>
+      </select>
+    </div>
 
-    <label for="imageUrl">URL da Imagem:</label>
-    <input type="text" id="imageUrl" [(ngModel)]="product.imageUrl" name="imageUrl" required>
+    <div class="imagem">
+      <label for="imageUrl">URL da Imagem:</label>
+      <input type="text" id="imageUrl" [(ngModel)]="product.imageUrl" name="imageUrl" required>
+    </div>
 
-    <label for="price">Preço:</label>
-    <input type="number" id="price" [(ngModel)]="product.price" name="price" required>
+    <div class="description">
+      <label for="description">Descrição:</label>
+      <textarea id="description" [(ngModel)]="product.description" name="description" required></textarea>
+    </div>
 
-    <label for="description">Descrição:</label>
-    <textarea id="description" [(ngModel)]="product.description" name="description" required></textarea>
+    <div class="productdescription">
+      <label for="productdescription">Descrição do Produto:</label>
+      <textarea id="productdescription" [(ngModel)]="product.productdescription" name="productdescription" required></textarea>
+    </div>
 
-    <label for="productdescription">Descrição do Produto:</label>
-    <textarea id="productdescription" [(ngModel)]="product.productdescription" name="productdescription" required></textarea>
+    <div class="price">
+      <label for="price">Preço:</label>
+      <input type="number" id="price" [(ngModel)]="product.price" name="price" required>
+    </div>
 
-    <button type="submit">Cadastrar Produto</button>
+    <div class="enviar"><button type="submit" [disabled]="!productForm.form.valid">Cadastrar Produto</button></div>
   </form>
 </div>
-
-

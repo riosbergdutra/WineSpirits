@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Wine } from '../interface/wine';
+
 @Component({
   selector: 'app-vendedor',
   templateUrl: './vendedor.component.html',
@@ -8,10 +9,10 @@ import { Wine } from '../interface/wine';
 })
 export class VendedorComponent {
   product: Wine = {
-    id: 0, // O id será gerado automaticamente pelo json-server
+    id: 0,
     name: '',
     year: 0,
-    type: '',
+    type: 'Tinto',
     imageUrl: '',
     price: 0,
     description: '',

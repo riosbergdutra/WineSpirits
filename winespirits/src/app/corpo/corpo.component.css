@@ -66,12 +66,13 @@ button:hover {
 /* Estilos para cada elemento de vinho */
 .vinhos {
   background-color: white;
-  margin-top: 36px;
-  width: 20%; /* Largura de cada elemento .vinhos */
-  height: calc(75vh - 68px);
-  text-align: center;
-  margin-right: 2%;
-  transition: transform 0.3s ease; /* Adicionando transição para suavizar o efeito hover */
+    margin-top: 31px;
+    width: 17%;
+    height: auto;
+    text-align: center;
+    margin-right: 1%;
+    transition: transform 0.3s ease; /* Adicionando transição para suavizar o efeito hover */
+    margin-left: 1%;
 }
 
 .vinhos:hover {
@@ -123,4 +124,7 @@ button:hover {
   .search-container {
     top: 111px;
   }
+}
+.preço{
+  margin-bottom: 20%;
 }

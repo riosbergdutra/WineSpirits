@@ -1,6 +1,5 @@
 
-
-.Entrar { /* Posiciona o botão Entrar acima do .conta-nova */
+.Entrar {
   position: absolute;
   top: 62%;
   left: 50%;
@@ -13,25 +12,27 @@
   cursor: pointer;
 }
 
+
 .Entrar:hover {
   background-color: #0056b3;
 }
 
 
 .conta-nova {
-display: block;
-width: 70%;
-padding: 10px;
-background-color: #2ab811;
-color: #fff;
-border: none;
-border-radius: 5px;
-margin: 26px 12.5%;
-cursor: pointer;
-text-align: center;
-margin-top: 52px;
-text-decoration: none;
-}
+  display: block;
+  width: 70%;
+  padding: 10px;
+  background-color: #2ab811;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 26px 12.5%;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 52px;
+  text-decoration: none;
+  }
+
 
 .conta-nova:hover {
   background-color:  #319a1e;
@@ -65,17 +66,16 @@ button:disabled {
 .formulario {
   width: 100%;
   max-width: 511px;
-  margin: 20px auto;
+  margin: 0 auto; /* Centraliza horizontalmente */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4%;
-  height: auto;
   box-sizing: border-box;
   position: absolute;
-  top: 18%;
-  left: 30%;
-  background-color:white ;
-
+  top: 50%; /* Ajuste para posicionar o formulário no centro vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
 }
 
 .welcome {

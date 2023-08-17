@@ -1,0 +1,72 @@
+.product-form-container {
+  width: 100%;
+  max-width: 511px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%; /* Ajuste para posicionar o formulário no centro vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  margin-top: 63px;
+}
+.product-form-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-form-container input,
+.product-form-container select,
+.product-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.product-form-container button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-form-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media screen and (min-width: 602px) and (max-width: 1322px) {
+  .product-form-container {
+    max-width: 59%;
+    top: 60%; /* Ajuste para manter abaixo do cabeçalho */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .product-form-container {
+    max-width: 90%;
+    position: static;
+    transform: none;
+    margin-top: 9px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-form-container {
+    top: 50%; /* Mantém no centro vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
