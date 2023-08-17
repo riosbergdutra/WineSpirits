@@ -15,7 +15,8 @@ import { WinesComponent } from './wines/tinto.component';
 import { ContatoComponent } from './contato/contato.component';
 import { MapComponent } from './map/map.component';
 import { WineDetailsComponent } from './wine-details/wine-details.component';
-
+import { LoginVendedorComponent } from './login-vendedor/login-vendedor.component';
+import { VendedorComponent } from './vendedor/vendedor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { WineDetailsComponent } from './wine-details/wine-details.component';
     ContatoComponent,
     MapComponent,
     WineDetailsComponent,
-
+    LoginVendedorComponent,
+    VendedorComponent
 
   ],
   imports: [
