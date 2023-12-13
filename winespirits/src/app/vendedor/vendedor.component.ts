@@ -25,7 +25,6 @@ export class VendedorComponent {
     this.productService.createProduct(this.product).subscribe(
       response => {
         console.log('Produto cadastrado com sucesso:', response);
-        // Limpar o formulário após o cadastro bem-sucedido
         this.product = {
           id: 0,
           name: '',
